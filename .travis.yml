@@ -1,0 +1,8 @@
+sudo: required
+services: 
+  - docker
+
+ after_success:
+   - docker build -t arwedstorm/vidly .
+   - echo "DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+   - docker push arwedstorm/vidly

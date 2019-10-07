@@ -1,0 +1,14 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+
+  mongo:
+    image: mongo
+    restart: always
+
+  node-app:
+    restart: always
+    build: .
+    ports:
+      - "8081:3000"

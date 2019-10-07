@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
 const _ = require("lodash");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 const { User, validate } = require("../models/user");
 
-async function run() {
-  const salt = await bcrypt.genSalt();
-  const hashed = await bcrypt.hash("1234", salt);
-  console.log(salt, hashed);
-}
+// async function run() {
+//   const salt = await bcrypt.genSalt();
+//   const hashed = await bcrypt.hash("1234", salt);
+//   console.log(salt, hashed);
+// }
 
 router.get("/", async (req, res) => {
   const users = await User.find().sort("name");
@@ -34,8 +34,9 @@ router.post("/", async (req, res) => {
   //     password: req.body.password
   //   });
   user = new User(_.pick(req.body, ["name", "email", "password"]));
-  const salt = await bcrypt.genSalt();
-  user.password = await bcrypt.hash(user.password, salt);
+  // const salt = await bcrypt.genSalt();
+  // user.password = await bcrypt.hash(user.password, salt);
+  user.password = "1234";
   await user.save();
   const token = user.generateAuthToken();
   res

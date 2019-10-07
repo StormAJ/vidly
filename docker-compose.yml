@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 4000:5432
+
+  node-app:
+    restart: always
+    build: .
+    # ports:
+    #   - "8081:3000"
+
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "8084:80"

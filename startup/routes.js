@@ -10,6 +10,7 @@ const test = require("../routes/testRoute");
 const users = require("../routes/users");
 const auth = require("../routes/auth");
 const returns = require("../routes/returns");
+const pg = require("../routes/pg");
 const error = require("../middleware/error");
 
 const helmet = require("helmet");
@@ -37,6 +38,7 @@ module.exports = function(app) {
   app.use("/api/vidly/users", users);
   app.use("/api/vidly/auth", auth);
   app.use("/api/vidly/returns", returns);
-  //app.use(logger); // Custom middleware function added to the http request pipeline
+  app.use("/api/vidly/pg", pg);
+  app.use(logger); // Custom middleware function added to the http request pipeline
   app.use(error);
 };

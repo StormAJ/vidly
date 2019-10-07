@@ -1,5 +1,9 @@
 {
   "name": "My express app",
-  "jwtPrivateKey": "",
-  "db": "mongodb://localhost/vidly2"
+  "jwtPrivateKey": "1234",
+  // "db": "mongodb://localhost/vidly2"
+  "db": "mongodb+srv://vidlyuser:1234@cluster-vidly-4zypl.mongodb.net/vidly1", // db on
+  // "db": "mongodb://mongo/vidly", // db in docker container
+  "PGHOST": "postgres"
+  // "PGHOST": "pg-cluster-ip-service"
 }
