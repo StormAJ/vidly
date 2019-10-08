@@ -1,0 +1,13 @@
+version: "3.1"
+services:
+  encrypt:
+    build: .
+    # volumes:
+    #   - "./:/app"
+# docker run -it -v C:\Users\Storm\Arwed\Sabbatical\Node\vidly\service-account:/app service-account_encrypt sh
+# in shell:
+#   travis login (username github: StormAJ, PW: .. )
+#   travis encrypt-file gc-service-account.json -r StormAJ/vidly
+# follow instruction:
+#   add - openssl .. to .travis.yml script
+#   remove gc-service-account.json from repo
