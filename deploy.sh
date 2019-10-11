@@ -1,3 +1,4 @@
+echo "deploy started"
 docker build -t arwedstorm/vidly:latest -t arwedstorm/vidly:$SHA .
 
 docker push arwedstorm/vidly:latest

@@ -25,7 +25,7 @@ before_install:
   - gcloud container clusters get-credentials vildy-cluster
   #  DOCKER_PASSWORD and DOCKER_USERNAME set in travis env variables
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build-t arwedstorm/vidly	.
+  - docker build -t arwedstorm/vidly	.
   - echo "before_install done"
 
 # script:
