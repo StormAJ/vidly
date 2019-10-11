@@ -30,6 +30,7 @@ before_install:
 
 # script:
 #   - echo "script"
+language: generic
 
 deploy:
   provider: script
