@@ -823,3 +823,5 @@
 {"level":"info","message":"Connected to mongodb+srv://vidlyuser:1234@cluster-vidly-4zypl.mongodb.net/vidly1 ..","timestamp":"2019-10-07T11:52:04.962Z"}
 {"level":"info","message":"Listening to port 3000 ..","timestamp":"2019-10-07T11:52:42.838Z"}
 {"level":"info","message":"Connected to mongodb+srv://vidlyuser:1234@cluster-vidly-4zypl.mongodb.net/vidly1 ..","timestamp":"2019-10-07T11:52:43.143Z"}
+{"level":"info","message":"Listening to port 3000 ..","timestamp":"2019-10-12T10:52:50.453Z"}
+{"level":"info","message":"Connected to mongodb+srv://vidlyuser:1234@cluster-vidly-4zypl.mongodb.net/vidly1 ..","timestamp":"2019-10-12T10:52:52.957Z"}

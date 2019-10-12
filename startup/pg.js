@@ -10,8 +10,10 @@ module.exports = async function() {
     .then(() => console.log(`Connected to ${pg} ..`))
     .catch(err => console.log(`PGHOST: ${pg} Error: ${err}`));
   // await pool.query("CREATE DATABASE vidly"); // funktioniert initial nur mit database: "postgres" in Pool attributen
-  await pool.query(
-    "CREATE TABLE IF NOT EXISTS users (last_name character varying, email character varying)"
-  );
+  pool
+    .query(
+      "CREATE TABLE IF NOT EXISTS users (last_name character varying, email character varying)"
+    )
+    .catch(err => console.log("Cannot create table", err));
   // pool.end();
 };
