@@ -1,4 +1,4 @@
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
   name: sabbas-com-tls
@@ -18,3 +18,23 @@ spec:
         domains:
           - sabbas.com
           - www.sabbas.com
+# apiVersion: certmanager.k8s.io/v1alpha1
+# kind: Certificate
+# metadata:
+#   name: sabbas-com-tls
+# spec:
+#   secretName: sabbas-com
+#   issuerRef:
+#     name: letsencrypt-prod
+#     kind: ClusterIssuer
+#   commonName: sabbas.com
+#   dnsNames:
+#     - sabbas.com
+#     - www.sabbas.com
+#   acme:
+#     config:
+#       - http01:
+#           ingressClass: nginx
+#         domains:
+#           - sabbas.com
+#           - www.sabbas.com
