@@ -15,12 +15,12 @@ metadata:
 spec:
   tls:
     - hosts:
-        - sabbas.com
-        - www.sabbas.com
-      secretName: sabbas-com
+        - sabbas.de
+        - www.sabbas.de
+      secretName: sabbas-de-cert-tls
 
   rules:
-    - host: sabbas.com
+    - host: sabbas.de
       http:
         paths:
           - path: /
@@ -31,7 +31,7 @@ spec:
           #    backend:
           #      serviceName: vidly-cli-cluster-ip-service
           #      servicePort: 3000
-    - host: www.sabbas.com
+    - host: www.sabbas.de
       http:
         paths:
           - path: /
