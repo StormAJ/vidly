@@ -1,18 +1,14 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: cert-manager-test
----
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: sabbas-de-cert
-  namespace: cert-manager-test
+  name: sabbas-de
+  namespace: default
 spec:
-  commonName: example.com
-  secretName: sabbas-de-cert-tls
+  secretName: sabbas-de-tls
   issuerRef:
-    name: sabbas-de
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: sabbas.de
   dnsNames:
     - sabbas.de
     - www.sabbas.de
@@ -23,44 +19,3 @@ spec:
         domains:
           - sabbas.de
           - www.sabbas.de
-# apiVersion: cert-manager.io/v1alpha2
-# kind: Certificate
-# metadata:
-#   name: sabbas-com-tls
-# spec:
-#   secretName: sabbas-com
-#   issuerRef:
-#     name: letsencrypt-prod
-#     kind: ClusterIssuer
-#   commonName: sabbas.com
-#   dnsNames:
-#     - sabbas.com
-#     - www.sabbas.com
-#   acme:
-#     config:
-#       - http01:
-#           ingressClass: nginx
-#         domains:
-#           - sabbas.com
-#           - www.sabbas.com
-
-# apiVersion: certmanager.k8s.io/v1alpha1
-# kind: Certificate
-# metadata:
-#   name: sabbas-com-tls
-# spec:
-#   secretName: sabbas-com
-#   issuerRef:
-#     name: letsencrypt-prod
-#     kind: ClusterIssuer
-#   commonName: sabbas.com
-#   dnsNames:
-#     - sabbas.com
-#     - www.sabbas.com
-#   acme:
-#     config:
-#       - http01:
-#           ingressClass: nginx
-#         domains:
-#           - sabbas.com
-#           - www.sabbas.com
